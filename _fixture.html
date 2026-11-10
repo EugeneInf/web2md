@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>如何用 Python 抓取网页 | 示例博客</title>
+  <script>window.dataLayer = []; console.log("这行不该出现在结果里");</script>
+  <style>body { font-family: sans-serif; }</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav><a href="/">首页</a> <a href="/about">关于</a> <a href="/rss">订阅</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>热门文章</h3>
+      <ul><li>第一篇</li><li>第二篇</li></ul>
+    </aside>
+
+    <article class="post">
+      <h1>如何用 Python 抓取网页</h1>
+      <p>抓取网页分三步：下载、解析、转换。第一步最容易被低估，因为它涉及网络、编码和反爬。</p>
+      <h2>一、下载</h2>
+      <p>用 <code>requests.get()</code> 发一个 HTTP GET 请求。记得设置 <strong>timeout</strong>，否则程序可能永远卡住。</p>
+      <ul>
+        <li>状态码 200 表示成功</li>
+        <li>404 表示页面不存在</li>
+        <li>403 通常是被反爬拦了</li>
+      </ul>
+      <h2>二、解析</h2>
+      <p>HTML 是一棵树。用 <code>BeautifulSoup</code> 把它变成能按标签查找的对象。</p>
+      <blockquote><p>提示：不要在网页上改代码。</p></blockquote>
+      <h2>三、转换</h2>
+      <p>最后用 <code>markdownify</code> 把节点翻译成 markdown。结果应该是一份能直接读的文档。</p>
+      <pre><code>python main.py https://example.com/post</code></pre>
+    </article>
+
+    <aside class="related">
+      <h3>相关阅读</h3>
+      <p>这一段是推荐位，不应该出现在正文里。</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>版权所有 © 2026 示例博客</p>
+    <script>console.log("页脚脚本");</script>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# 虚拟环境：体积大、和本机路径绑定，绝对不能进仓库
+.venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# PyCharm 的本地配置（每个人不一样）
+.idea/
+
+# 运行产物：本工具生成出来的 markdown 不进仓库
+*.md
+!README.md
